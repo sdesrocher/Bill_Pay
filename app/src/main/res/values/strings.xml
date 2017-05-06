@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Bill Pay</string>
+    <string name="bill_list_intro">List of bills left to pay:</string>
+    <string name="add_bill">Enter info on new bill:</string>
+    <string name="details">Selected Bill Details</string>
+    <string name="bill_name">Bill name:</string>
+    <string name="date_due">Date due:</string>
+    <string name="save">Save</string>
+    <string name="total_bill_amount">Total bill amount:</string>
+    <string name="create_new_user">Create New User</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="title_activity_nav__drawer">Nav_Drawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="details_main">Details</string>
+    <string name="paid_main">Paid</string>
+    <string name="result_set">Result</string>
+    <string name="how_many_people_live_in_the_household">How many people live in the household?</string>
+    <string name="price_per_roommate">Price per roommate:</string>
+    <string name="update_and_return_to_list">Update and Return to List</string>
+    <string name="additonal_options">Additonal options</string>
+    <string name="click_on_text_to_visit_page">Click on text to visit page</string>
+    <string name="amount_per_roomate">Amount per roomate:</string>
+    <string name="bill_name_detail">Bill name:</string>
+    <string name="date_due_detail">Date due:</string>
+    <string name="return_to_list">Return to list</string>
+    <string name="total_bill_amount_detail">Total bill amount:</string>
+    <string name="bill_amount_due_from_each_roommate">Bill amount due from each roommate:</string>
+    <string name="return_detail">Return</string>
+    <string name="how_many_people_live_here">How many people live here:</string>
+    <string name="price_per_roomate">Price per roomate:</string>
+    <string name="return_set">Return</string>
+    <string name="update">UPDATE</string>
+
+
+    <string-array name="roommates">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="create_user">Create User</string>
+    <string name="sign_in">SIGN IN</string>
+</resources>
