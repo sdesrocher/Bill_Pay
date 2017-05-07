@@ -64,10 +64,10 @@ public class BillFirebaseData {
      * Creating a new bill with the user id
      * @param name -name of bill
      * @param duedate -date bill due
-     * @param amountper -price of the bill
+     * @param amountper -price of the bill per roommate
      * @return the bill created
      */
-    public Bill createBill(String name, String duedate, String amount){
+    public Bill createBill(String name, String duedate, String amountper){
                     //get new database key
         String key = myBillDbRef.child(BillDataTag).push().getKey();
                      //set up object
@@ -75,7 +75,7 @@ public class BillFirebaseData {
                  //write vote to Firebase
         myBillDbRef.child("users").child(userId).child(key).setValue(newBill);
         return newBill;
-        return null;
+
     }
 
     /**

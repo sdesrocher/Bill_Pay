@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import static css.cis3334.bill_pay.R.string.details;
+
 /**
  * Created by sdesrocher on 4/26/2017.
  * Shows the list of details first entered in when new bill added. Contains button to return to main activity.
@@ -17,6 +19,7 @@ public class DetailActivity extends AppCompatActivity{
 
     Button btnReturn;
     EditText etName, etDueDate, etAmount, etAmountPer;
+
 
     /**
      * Basic create to set widgets. Then set intent when button clicked to return to main activity. It gets the information from Bill class.
@@ -30,6 +33,7 @@ public class DetailActivity extends AppCompatActivity{
         Bill bill = (Bill) bundle.getSerializable("Bill");
 
         //link variables to xml
+        btnReturn = (Button) findViewById(R.id.buttonReturnList);
         etName = (EditText) findViewById(R.id.editTextBillName);
         etDueDate = (EditText) findViewById(R.id.editTextDueDate);
         etAmount = (EditText) findViewById(R.id.editTextAmount);
@@ -38,11 +42,9 @@ public class DetailActivity extends AppCompatActivity{
         //take entry from each editText
         etName.setText(bill.getName());
         etDueDate.setText(bill.getDueDate());
-        etAmount.setText(bill.getAmount());
         etAmountPer.setText(bill.getAmountPer());
 
         //set button intent to return to main page on button click
-        btnReturn = (Button) findViewById(R.id.buttonReturn);
         btnReturn.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
                 Intent mainActIntent = new Intent(view.getContext(), MainActivity.class);
@@ -50,6 +52,7 @@ public class DetailActivity extends AppCompatActivity{
                 startActivity(mainActIntent);
             }
         });
+    }
 
 
-    }}
+    }//end main

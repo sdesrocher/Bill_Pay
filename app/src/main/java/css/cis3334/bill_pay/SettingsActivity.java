@@ -12,7 +12,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     Spinner spinRoommate;
     Button btnUpdate, btnReturn;
-    EditText etAmount, etPriceResult, etAmountPer;
+    //et Amount from DetailsActivity where receiving info
+    EditText etAddAmount, etAmount, etPriceResult, etAmountPer;
+    Double amount, amountper;
 
     /**
      *  Basic create and sets names for the widgets
@@ -24,73 +26,78 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
 
-
+        //set connections with xml for settings
         spinRoommate = (Spinner) findViewById(R.id.spinnerRoommates);
         btnUpdate = (Button) findViewById(R.id.buttonUpdate);
         etPriceResult = (EditText) findViewById(R.id.editTextPriceResult);
         //etAmountPer = (EditText) findViewById(R.id.editTextAmountPer);
 
+        Bundle extras = getIntent().getExtras();
+        amount = extras.getDouble("Amount");
+
+    }//end onCreate
 
 
         /**
          * Set up on click for spinner data after button clicked. Set the new price as etAmountPer
          * @param view - how the items are viewed
          */
+        private void setupUpdateButton() {
         btnUpdate = (Button) findViewById(R.id.buttonUpdate);
-        btnUpdate.setOnClickListener(new View.OnClickListener(){
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //get info from Bill class
-                Bundle bundle = getIntent().getExtras();
-                Bill bill = (Bill) bundle.getSerializable("Bill");
+
                 etAmount = (EditText) findViewById(R.id.editTextAmount);
-
-
-                // int roommates = Integer.parseInt(spinRoommate.getSelectedItem().toString());
 
                 //if statement to read spinner results and make division of total price by number of roommates. Set as etPriceResult and pass that to etAmount to be sent back.
                 if (spinRoommate.getSelectedItem().toString() == "1") {
-                    etPriceResult.setText(bill.getAmount);
+                    amountper = amount;
 
 
                 } else if (spinRoommate.getSelectedItem().toString() == "2") {
-                    etPriceResult = (bill.getAmount / 2);
+                    amountper = (amount / 2);
 
                 } else if (spinRoommate.getSelectedItem().toString() == "3") {
-                    etPriceResult = (bill.getAmount / 3);
+                    amountper = (amount / 3);
 
                 } else if (spinRoommate.getSelectedItem().toString() == "4") {
-                    etPriceResult = (bill.getAmount / 4);
+                    amountper = (amount / 4);
 
                 } else if (spinRoommate.getSelectedItem().toString() == "5") {
-                    etPriceResult = (bill.getAmount / 5);
+                    amountper = (amount / 5);
 
                 } else if (spinRoommate.getSelectedItem().toString() == "6") {
-                    etPriceResult = (bill.getAmount / 6);
+                    amountper = (amount / 6);
 
                 }
 
-
-                //set the result to etAmount Result to be passed back
-                etAmountPer = etPriceResult;
-
-
             }
         });
-
+            etAmountPer.setText("$" + amountper);
+        }
         /**
          * Set up button to return to main page when clicked
          */
-        btnReturn = (Button) findViewById(R.id.buttonReturnSet);
-        btnReturn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent mainActIntent = new Intent(view.getContext(), MainActivity.class);
-                finish();
-                startActivity(mainActIntent);
-            }
-        });
+        private void setupReturnButton() {
+            btnReturn = (Button) findViewById(R.id.buttonReturnSet);
+            btnReturn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent mainActIntent = new Intent(view.getContext(), MainActivity.class);
+                    finish();
+                    startActivity(mainActIntent);
+                }
+            });
+        }
 
 
 
-    }//end onCreate
+
+    @Override
+    public void finish() {
+        Intent intent = new Intent();
+        intent.putExtra("Amount Per Roommate", amountper);
+        setResult(RESULT_OK, intent);
+        super.finish();
+    }
 }//end main
 

@@ -81,5 +81,5 @@ public class Bill implements Serializable{
                 ", DueDate='" + duedate + '\'' +
                 ", Amount='" + amountper + '\'' +
                 '}';
-    }
+    }}
 
