@@ -15,19 +15,22 @@ import static android.R.attr.data;
 
 /**
  * Created by sdesrocher on 4/26/2017.
- * Page displayed when new bill is to be added into firebase
+ * Page displayed when new bill is to be added into firebase.
  */
 
 public class AddActivity extends AppCompatActivity {
 
-    EditText etName, etDueDate, etAmountPer, etGetName, etGetDueDate, etGetAmount;
+    EditText   etAmountPer, etGetName, etGetDueDate, etGetAmount;
     Button btnSave, btnReturn;
     BillFirebaseData billDataSource;
     Spinner spnPeople;
+    int people = 1;
 
 
     /**
-     * Basic onCreate format. Connects the widgets for getting the strings and then converts them to etName, etDueDate and etAmount.
+     * Basic onCreate format. Connects the widgets for getting the strings and int for amount. Receives selection from spinner.
+     * Does math dividing bill amount by number of people selected in spinner. Sets up button to save information into database and do math.
+     * Sets up return button to return to main screen when clicked.
      *
      * @param savedInstanceState
      */
@@ -55,35 +58,34 @@ public class AddActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //add bills to database
                 String name = etGetName.getText().toString();
-                String duedate = etDueDate.getText().toString();
+                String duedate = etGetDueDate.getText().toString();
                 int amount = Integer.parseInt(etGetAmount.getText().toString());
+                int people;
 
-                //initialize
-                int numberOfRoommates = 1;
 
                 //if statement to read spinner results and make division of total price by number of roommates. Set as etPriceResult and pass that to etAmount to be sent back.
                 if (spnPeople.getSelectedItem().toString() == "1") {
 
-                    numberOfRoommates = 1;
+                    people = 1;
 
                 } else if (spnPeople.getSelectedItem().toString() == "2") {
-                    numberOfRoommates = 2;
+                    people = 2;
 
                 } else if (spnPeople.getSelectedItem().toString() == "3") {
-                    numberOfRoommates = 3;
+                    people = 3;
 
                 } else if (spnPeople.getSelectedItem().toString() == "4") {
-                    numberOfRoommates = 4;
+                    people = 4;
 
                 } else if (spnPeople.getSelectedItem().toString() == "5") {
-                    numberOfRoommates = 5;
+                    people = 5;
 
                 } else if (spnPeople.getSelectedItem().toString() == "6") {
-                    numberOfRoommates = 6;
+                    people = 6;
 
                 }
 
-                int amountperroom = amount / numberOfRoommates;
+                int amountperroom = (amount / people);
                 String amountper = Integer.toString(amountperroom);
 
                 etAmountPer.setText(amountper.toString());

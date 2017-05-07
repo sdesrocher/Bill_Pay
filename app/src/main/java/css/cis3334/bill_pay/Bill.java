@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Created by sdesrocher on 4/26/2017.
+ * Keeps all values and displays them for the list of bills.
  */
 
 public class Bill implements Serializable{

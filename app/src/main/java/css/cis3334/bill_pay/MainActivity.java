@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Creating the menu for settings on top right corner
-     * @param menu -menu for settings
+     * Creating the menu for logout in top right corner
+     * @param menu -menu for logging out
      * @return -returns the menu
      */
     @Override

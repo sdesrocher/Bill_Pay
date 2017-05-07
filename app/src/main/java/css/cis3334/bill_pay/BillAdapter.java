@@ -37,8 +37,8 @@ public class BillAdapter extends ArrayAdapter<Bill> {
 
     /**
      * set up the view for the list of bills
-     * @param position - gets position from Bill class
-     * @param convertView - get view from Name, Duedate and amount per and set
+     * @param position - gets position from Bill class in list
+     * @param convertView - get view from Name, Duedate and amount per and set.
      * @param parent - how to view it
      * @return - return the row with name, duedate and amountper
      */

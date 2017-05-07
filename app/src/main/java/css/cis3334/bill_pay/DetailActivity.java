@@ -22,7 +22,7 @@ public class DetailActivity extends AppCompatActivity{
 
 
     /**
-     * Basic create to set widgets. Then set intent when button clicked to return to main activity. It gets the information from Bill class.
+     * Basic create to set widgets. Then set intent when button clicked to return to main activity. It shares info with Bill class.
      * @param savedInstanceState
      */
     protected void onCreate(Bundle savedInstanceState) {
