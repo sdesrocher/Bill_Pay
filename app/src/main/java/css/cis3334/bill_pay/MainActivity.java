@@ -132,7 +132,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.sign_out) {
+            FirebaseAuth.getInstance().signOut();
+
+            Toast.makeText(getApplicationContext(), "You have been signed out", Toast.LENGTH_LONG)
+                    .show();
+
             return true;
         }
 
@@ -150,12 +155,7 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_settings) {
-            //Handle settings action
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_new) {
+        if (id == R.id.nav_new) {
             //Handle add new bill action
             Intent intent = new Intent(this, AddActivity.class);
             startActivity(intent);

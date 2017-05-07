@@ -62,4 +62,5 @@
     </string>
     <string name="create_user">Create User</string>
     <string name="sign_in">SIGN IN</string>
+    <string name="split_the_bill_between_how_many_people">Split the bill between how many people:</string>
 </resources>
