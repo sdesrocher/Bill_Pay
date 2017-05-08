@@ -38,14 +38,6 @@
     <string name="update">UPDATE</string>
 
 
-    <string-array name="roommates">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-    </string-array>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -63,4 +55,6 @@
     <string name="create_user">Create User</string>
     <string name="sign_in">SIGN IN</string>
     <string name="split_the_bill_between_how_many_people">Split the bill between how many people:</string>
+    <string name="bill_name_amount_per_roommate_date_due">Bill Name, Amount Per Roommate, Date Due</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

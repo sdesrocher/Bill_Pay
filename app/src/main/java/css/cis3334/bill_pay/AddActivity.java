@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -20,7 +21,7 @@ import static android.R.attr.data;
 
 public class AddActivity extends AppCompatActivity {
 
-    EditText   etAmountPer, etGetName, etGetDueDate, etGetAmount;
+    EditText   etAmountPer, etGetName, etGetDueDate, etGetAmount, etPeople;
     Button btnSave, btnReturn;
     BillFirebaseData billDataSource;
     Spinner spnPeople;
@@ -43,8 +44,8 @@ public class AddActivity extends AppCompatActivity {
         etGetName = (EditText) findViewById(R.id.editTextGetName);
         etGetDueDate = (EditText) findViewById(R.id.editTextGetDueDate);
         etGetAmount = (EditText) findViewById(R.id.editTextGetAmount);
-        spnPeople = (Spinner) findViewById(R.id.spinnerRoommates);
-        //variable to display number at bottom of page
+        etPeople = (EditText) findViewById(R.id.editTextPeople);
+                //variable to display number at bottom of page
         etAmountPer = (EditText) findViewById(R.id.editTextAmountPer);
 
         //connect with FireBase
@@ -59,39 +60,22 @@ public class AddActivity extends AppCompatActivity {
                 //add bills to database
                 String name = etGetName.getText().toString();
                 String duedate = etGetDueDate.getText().toString();
-                int amount = Integer.parseInt(etGetAmount.getText().toString());
-                int people;
 
-
-                //if statement to read spinner results and make division of total price by number of roommates. Set as etPriceResult and pass that to etAmount to be sent back.
-                if (spnPeople.getSelectedItem().toString() == "1") {
-
-                    people = 1;
-
-                } else if (spnPeople.getSelectedItem().toString() == "2") {
-                    people = 2;
-
-                } else if (spnPeople.getSelectedItem().toString() == "3") {
-                    people = 3;
-
-                } else if (spnPeople.getSelectedItem().toString() == "4") {
-                    people = 4;
-
-                } else if (spnPeople.getSelectedItem().toString() == "5") {
-                    people = 5;
-
-                } else if (spnPeople.getSelectedItem().toString() == "6") {
-                    people = 6;
-
-                }
+                //get int from amount to be divided by number of people entered
+               int  amount = Integer.parseInt(etGetAmount.getText().toString());
+                people = Integer.parseInt(etPeople.getText().toString());
 
                 int amountperroom = (amount / people);
+
                 String amountper = Integer.toString(amountperroom);
 
-                etAmountPer.setText(amountper.toString());
+                //return result at bottom of page
+                etAmountPer.setText("$" +  amountper.toString());
 
-                billDataSource.createBill(name, duedate, amountper);
 
+
+
+                billDataSource.createBill(name, duedate, "$" + amountper);
             }
         });
 

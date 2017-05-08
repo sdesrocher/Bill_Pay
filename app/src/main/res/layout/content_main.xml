@@ -10,18 +10,25 @@
     android:orientation="vertical">
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bill_list_intro" />
+        android:text="@string/bill_list_intro"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bill_name_amount_per_roommate_date_due" />
 
     <ListView
 
         android:id="@+id/ListViewBill"
         android:layout_width="match_parent"
-        android:layout_height="416dp"
+        android:layout_height="400dp"
         android:choiceMode="singleChoice"
         android:clickable="false" />
 

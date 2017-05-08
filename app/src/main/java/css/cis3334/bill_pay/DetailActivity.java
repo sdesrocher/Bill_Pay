@@ -18,7 +18,7 @@ import static css.cis3334.bill_pay.R.string.details;
 public class DetailActivity extends AppCompatActivity{
 
     Button btnReturn;
-    EditText etName, etDueDate, etAmount, etAmountPer;
+    EditText etName, etDueDate, etAmountPer;
 
 
     /**
@@ -36,7 +36,6 @@ public class DetailActivity extends AppCompatActivity{
         btnReturn = (Button) findViewById(R.id.buttonReturnList);
         etName = (EditText) findViewById(R.id.editTextBillName);
         etDueDate = (EditText) findViewById(R.id.editTextDueDate);
-        etAmount = (EditText) findViewById(R.id.editTextAmount);
         etAmountPer = (EditText) findViewById(R.id.editTextAmountPer);
 
         //take entry from each editText

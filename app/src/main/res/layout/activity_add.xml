@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType=""
+        android:inputType="date"
         tools:ignore="LabelFor,TextFields" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         tools:ignore="LabelFor" />
 
     <TextView
@@ -59,11 +59,13 @@
         android:layout_height="wrap_content"
         android:text="@string/split_the_bill_between_how_many_people" />
 
-    <Spinner
-        android:id="@+id/spinnerRoommates"
+    <EditText
+        android:id="@+id/editTextPeople"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/roommates" />
+        android:ems="10"
+        android:inputType="number"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/buttonSave"

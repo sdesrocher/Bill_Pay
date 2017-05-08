@@ -12,7 +12,6 @@ public class Bill implements Serializable{
     private String key;
     private String name;
     private String duedate;
-    private String amount;
     private String amountper;
 
     public Bill(){
@@ -22,7 +21,6 @@ public class Bill implements Serializable{
         this.key = key;
         this.name = name;
         this.duedate = duedate;
-        this.amount = amount;
         this.amountper = amountper;
 
     }
@@ -56,20 +54,11 @@ public class Bill implements Serializable{
         this.duedate = duedate;
     }
 
-    //get and set amount
-    public String getAmount(){
-
-        return amount;
-
-    }public void setAmount(String amount){
-
-        this.amountper = amount;
-    }
 
     //get and set amountPer
     public String getAmountPer(){
 
-        return amountper;
+        return   amountper;
 
     }public void setAmountPer(String amountper){
 
@@ -80,7 +69,7 @@ public class Bill implements Serializable{
         return "Bill{" +
                 "Name='" + name + '\'' +
                 ", DueDate='" + duedate + '\'' +
-                ", Amount='" + amountper + '\'' +
+                ", Amount='" +  amountper + '\'' +
                 '}';
     }}
 

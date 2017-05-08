@@ -68,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();  //declare object for Firebase
         setupCreateButton();
         setupLoginButton();
+
     }
 
     /**
@@ -99,6 +100,9 @@ public class LoginActivity extends AppCompatActivity {
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
                 createAccount(email,password);
+
+                Toast.makeText(getApplicationContext(), "Account has been created", Toast.LENGTH_LONG)
+                        .show();
             }
         });
     }
@@ -118,30 +122,15 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     //return to MainActivity if login works
                     finish();
+                    //if signed in
+                    Toast.makeText(getApplicationContext(), "You have been signed in", Toast.LENGTH_LONG)
+                            .show();
                 }
             }
         });
     }
 
-    /**
-     * Checks if the email entered is valid by checking if contains an @ sign
-     * @param email -email being checked
-     * @return -if not valid
-     */
-    private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
-    }
 
-    /**
-     * Checks if password is valid with more than 4 letters.
-     * @param password - password being checked
-     * @return - if valid or not
-     */
-    private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
-    }
 
     /**
      * creating the account if not recurrent user. Toast if creating account failed
